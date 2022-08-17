@@ -7,6 +7,7 @@
     <title>Restaurante</title>
 </head>
 <body>
+    <h1>Restaurante de Comidas rapidas</h1>
     
 </body>
 </html>
