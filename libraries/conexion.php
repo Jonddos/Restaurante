@@ -15,7 +15,6 @@
             $this->conect = new PDO($con,$this->user,$this->password);
            try {
                 $this->conect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "conexion exitosa";
            }catch (\PDOException $e) {
                 echo "Error: ".$e->getMessage();
            }
