@@ -1,21 +1,27 @@
 <?php 
-
     class Conexion {
         private $host = "localhost";
         private $dbname = "restaurante";
         private $user = "root";
-        private $password = "password";
-
+        private $password = "";
+        private $conect;
 
         public function __construct(){
-            $this->conexion();
-        }
 
+           } 
+     
         public function conexion(){
             $con="mysql:host={$this->host};dbname={$this->dbname};"; 
-            $conexion = new PDO($con,$this->user,$this->password);
-            return $conexion; 
+            $this->conect = new PDO($con,$this->user,$this->password);
+           try {
+                $this->conect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                echo "conexion exitosa";
+           }catch (\PDOException $e) {
+                echo "Error: ".$e->getMessage();
+           }
+           return $this->conect;
         }
-    }
 
+    }
+        
 ?>
